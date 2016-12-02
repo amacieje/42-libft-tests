@@ -6,19 +6,20 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 19:57:03 by amacieje          #+#    #+#             */
-/*   Updated: 2016/12/02 12:31:44 by amacieje         ###   ########.fr       */
+/*   Updated: 2016/12/02 12:55:34 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 
+int			ft_atoi(const char *str);
 void		ft_putnbr(int n);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *s);
 void		ft_putstr(char const *s);
 
-void	*ft_test_strlcat(void)
+void		*ft_test_strlcat(int size)
 {
 	char	src[] = "2Code4U";
 	char	dst[20] = "42Born";
@@ -29,7 +30,7 @@ void	*ft_test_strlcat(void)
 	i = 0;
 	/*For your ft_strlcat*/
 	ft_putstr("ft_strlcat return value : ");
-	ft_putnbr(ft_strlcat(dst, src, 0)); //set size value here
+	ft_putnbr(ft_strlcat(dst, src, size));
 	ft_putstr("\ndst after ft_strlcat : ");
 	ft_putstr(dst);
 	ft_putstr("\ndst casted in int : ");
@@ -41,7 +42,7 @@ void	*ft_test_strlcat(void)
 	}
 	/*For the libc strlcat*/
 	ft_putstr("\nstrlcat return value : ");
-	ft_putnbr(strlcat(dst2, src2, 0)); //set size value here
+	ft_putnbr(strlcat(dst2, src2, size));
 	ft_putstr("\ndst2 after strlcat : ");
 	ft_putstr(dst2);
 	ft_putstr("\ndst2 casted in int : ");
@@ -52,5 +53,20 @@ void	*ft_test_strlcat(void)
 		ft_putstr(" ");
 		i++;
 	}
+	ft_putstr("\n");
+	return (0);
+}
+
+int			main(int argc, char **argv)
+{
+	int		size;
+
+	if (argc < 2)
+	{
+		ft_putstr("Please set a value for size as argv[1]\n");
+		return (0);
+	}
+	size = ft_atoi(argv[1]);
+	ft_test_strlcat(size);
 	return (0);
 }
