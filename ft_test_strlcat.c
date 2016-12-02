@@ -6,13 +6,12 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 19:57:03 by amacieje          #+#    #+#             */
-/*   Updated: 2016/12/02 11:29:46 by amacieje         ###   ########.fr       */
+/*   Updated: 2016/12/02 12:11:39 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 void		ft_putnbr(int n);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
@@ -28,7 +27,6 @@ void	*ft_test_strlcat(void)
 	int		i;
 
 	i = 0;
-	printf("ft_strlen(src) : %zu\n", ft_strlen(src));
 	ft_putstr("ft_strlcat return value : ");
 	ft_putnbr(ft_strlcat(dst, src, 0));
 	ft_putstr("\ndst after ft_strlcat : ");
