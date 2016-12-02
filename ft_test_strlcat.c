@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 19:57:03 by amacieje          #+#    #+#             */
-/*   Updated: 2016/12/02 12:11:39 by amacieje         ###   ########.fr       */
+/*   Updated: 2016/12/02 12:27:11 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ void	*ft_test_strlcat(void)
 		ft_putstr(" ");
 		i++;
 	}
-	i = 0;
 	ft_putstr("\nstrlcat return value : ");
 	ft_putnbr(strlcat(dst2, src2, 0));
 	ft_putstr("\ndst2 after strlcat : ");
 	ft_putstr(dst2);
 	ft_putstr("\ndst2 casted in int : ");
+	i = 0;
 	while (i <= ft_strlen(dst2))
 	{
 		ft_putnbr(dst2[i]);
